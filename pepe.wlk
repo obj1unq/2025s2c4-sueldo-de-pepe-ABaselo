@@ -5,14 +5,14 @@ object pepe {
  //guarda la categoria y se acuerda. colaboradores interna y con pepita era externa.
  
   var property  categoria = cadete
-  var property bonoResultados =  bonoPorPorcentaje
+  var property tipobonoResultados =  bonoPorPorcentaje
 
   //method sueldo() = categoria.neto() 
 	method sueldo() = self.neto() * self.bonoResultados() 
 
     method neto() = categoria.neto()
     //calculo un resultado para mi
-    method bonoResultados() = bonoResultados.bono(self)
+    method bonoResultados() = tipobonoResultados.bono(self)
 }
 
 
