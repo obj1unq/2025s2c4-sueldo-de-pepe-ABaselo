@@ -1,3 +1,31 @@
+//categorias 
+object cadete { 
+  method neto() = 20000  
+}
+object gerente {
+  method neto() = 150000 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ********hecho en clases**** 
 object pepe {
  
  //referencia que apunta a un objeto
@@ -8,6 +36,9 @@ object pepe {
   var property tipobonoResultados =  bonoPorPorcentaje
 
   //method sueldo() = categoria.neto() 
+
+  //revisar esto paara mañana sobre el self que es y para que sirve
+  
 	method sueldo() = self.neto() * self.bonoResultados() 
 
     method neto() = categoria.neto()
@@ -18,7 +49,8 @@ object pepe {
 
 object gerente {
     method neto() = 15000
-    
+
+
 }
 
 
@@ -27,8 +59,10 @@ object cadete {
 }
 
 object bonoPorPorcentaje {
-  method bono(empleado) = empleado.neto() * (10/100)
-  
+   method bono(empleado) = empleado.neto() * (10/100)  
 }
+
+*/
+
 
 
