@@ -6,6 +6,23 @@ object gerente {
   method neto() = 150000 
 }
 
+//Personas
+object pepe {
+  var property categoria = cadete
+
+}
+
+//obejetos bonos
+
+object bonoPorPorcentaje{
+  method bono(empleado) = empleado.neto() * 0.1  
+}
+object bonoPorMontoFijo{
+ method bonoFijo(empleado) = 800  
+}
+object bonoPorNulo{
+ method nulo(empleado) = 0 
+}
 
 
 
