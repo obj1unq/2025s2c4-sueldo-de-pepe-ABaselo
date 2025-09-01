@@ -42,17 +42,18 @@ object bonoPorNulo{
 
 object  bonoPorPresentismoNormal{
 
-method calcularPara(empleado) {
-  if (empleado.faltas() == 0) {
-    return 2000
-  } else {
-    return 0
-  }
-
-}
-
-}
-
+  method calcularPara(empleado) {
+    if (empleado.faltas() == 0) {
+      return 2000
+    }
+    else  if (empleado.faltas() == 1) {
+      return 1000
+    }
+    else {
+      return 0  
+    }
+ } //fin method 
+}//fin objeto bono por presentismo normal
 
 
 
