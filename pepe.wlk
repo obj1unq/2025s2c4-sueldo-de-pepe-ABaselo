@@ -54,7 +54,16 @@ object  bonoPorPresentismoNormal{
       return 0  
     }
  } //fin method 
+
 }//fin objeto bono por presentismo normal
+
+object bonoPorPresentismoAjuste{
+  method calcularAjustePresentismo(empleado) {
+      if(empleado.faltas()== 0){return 100}
+      else{return 0}  
+    }
+}
+
 
 
 
