@@ -14,8 +14,6 @@ object pepe {
   var property tipoDeBonoResultado = bonoPorPorcentaje
   var property bonoNulo = bonoPorNulo 
 
-
-
 //  method sueldo() = neto() + bonoResultados.calcularPara(self) + bonoPresentismo.calcularPara(self)
   method sueldo() = cadete.neto() + self.bonoResultado()
   
@@ -23,8 +21,11 @@ object pepe {
   method faltas(_faltas){
   faltas +=_faltas
   }  
-  method bonoResultado() = tipoDeBonoResultado.bono(self)
-  
+ method neto() {
+  return  categoria.neto()
+ }
+
+  method bonoResultado() = tipoDeBonoResultado.bono(self)  
 }
 //obejetos bonos
 
