@@ -9,9 +9,8 @@ object gerente {
 
 //Empleados
 object pepe {
-
-  var property categoria = cadete
   var faltas = 0 
+  var property categoria = cadete  
   var property tipoDeBonoResultado = bonoPorPorcentaje
   var property bonoNulo = bonoPorNulo 
 
@@ -19,8 +18,11 @@ object pepe {
 
 //  method sueldo() = neto() + bonoResultados.calcularPara(self) + bonoPresentismo.calcularPara(self)
   method sueldo() = cadete.neto() + self.bonoResultado()
-
-  method faltar() { faltas += 1 }
+  
+  //agregarFaltas
+  method faltas(_faltas){
+  faltas +=_faltas
+  }  
   method bonoResultado() = tipoDeBonoResultado.bono(self)
   
 }
@@ -40,9 +42,16 @@ object bonoPorNulo{
 
 object  bonoPorPresentismoNormal{
 
+method calcularPara(empleado) {
+  if (empleado.faltas() == 0) {
+    return 2000
+  } else {
+    return 0
+  }
 
 }
 
+}
 
 
 
