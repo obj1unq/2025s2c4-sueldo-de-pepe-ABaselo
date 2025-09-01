@@ -62,7 +62,21 @@ object bonoPorPresentismoAjuste{
       if(empleado.faltas()== 0){return 100}
       else{return 0}  
     }
-}
+
+}// fin object 
+
+object bonoPorPresentismoDemagogico{
+
+  method calcularPresentismoDemagogico(empleado) {
+    
+     if(empleado.neto() < 18000 ){ return 500}
+
+     else {return 300}
+    
+  }
+
+}//fin object
+
 
 
 
