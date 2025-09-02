@@ -20,9 +20,10 @@ object pepe {
   //agregarFaltas
   method faltas(_faltas){
   faltas +=_faltas
-  }  
- method neto() {
-  return  categoria.neto()
+  } 
+   
+  method neto() {
+    return  categoria.neto()
  }
 
   method bonoResultado() = tipoDeBonoResultado.bono(self)  
