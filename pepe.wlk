@@ -13,7 +13,7 @@ object pepe {
   var categoria = cadete//var property categoria = cadete   no es propety
   var tipoDeBonoResultado = bonoPorPorcentaje
   var tipoBonoPresentismo = bonoPorPresentismoNormal
-  
+
 //  var bonoNulo = bonoPorNulo 
 
 //  method sueldo() = neto() + bonoResultados.calcularPara(self) + bonoPresentismo.calcularPara(self)
@@ -27,6 +27,17 @@ object pepe {
   method neto() {
     return  categoria.neto()
  }
+
+/*
+method neto(){
+const neto = categoria.neto()
+return neto
+}
+Nota:
+Como limpia la referencia y como trabaja en el momento, todo ocurre en el methodo. 
+se crea en el momento y se elimina cuando termina su ejecucion.
+
+*/
 
   method bonoResultado() = tipoDeBonoResultado.bono(self)
 }
