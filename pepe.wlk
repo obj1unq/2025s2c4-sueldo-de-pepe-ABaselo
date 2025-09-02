@@ -13,9 +13,9 @@ object gerente {
 //Empleados
 object pepe {
   var faltas = 0 
-  var categoria = cadete//var property categoria = cadete   no es propety
-  var tipoDeBonoResultado = bonoPorPorcentaje
-  var tipoBonoPresentismo = bonoPorPresentismoNormal
+  var property  categoria = cadete// si le saco el property me genera un warrion porque?
+  var property  tipoDeBonoResultado = bonoPorPorcentaje
+  var property tipoBonoPresentismo = bonoPorPresentismoNormal
 
 //  var bonoNulo = bonoPorNulo 
 
@@ -93,6 +93,13 @@ object bonoPorPresentismoDemagogico{
   }
 
 }//fin object
+
+object bonoPresentismoNulo{
+
+method calcularPresentismoNulo() = 0
+  
+}
+
 
 
 
