@@ -81,22 +81,6 @@ object bonoPorPresentismoDemagogico{
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* ********hecho en clases**** 
 object pepe {
  
