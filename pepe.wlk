@@ -10,9 +10,11 @@ object gerente {
 //Empleados
 object pepe {
   var faltas = 0 
-  var property categoria = cadete  
-  var property tipoDeBonoResultado = bonoPorPorcentaje
-  var property bonoNulo = bonoPorNulo 
+  var categoria = cadete//var property categoria = cadete   no es propety
+  var tipoDeBonoResultado = bonoPorPorcentaje
+  var tipoBonoPresentismo = bonoPorPresentismoNormal
+  
+//  var bonoNulo = bonoPorNulo 
 
 //  method sueldo() = neto() + bonoResultados.calcularPara(self) + bonoPresentismo.calcularPara(self)
   method sueldo() = cadete.neto() + self.bonoResultado()
@@ -26,7 +28,7 @@ object pepe {
     return  categoria.neto()
  }
 
-  method bonoResultado() = tipoDeBonoResultado.bono(self)  
+  method bonoResultado() = tipoDeBonoResultado.bono(self)
 }
 //obejetos bonos
 
