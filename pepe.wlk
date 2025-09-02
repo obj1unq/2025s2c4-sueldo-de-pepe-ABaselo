@@ -1,3 +1,6 @@
+//trabajo con polimosrfismo
+
+
 //categorias 
 object cadete { 
   method neto() = 20000  
