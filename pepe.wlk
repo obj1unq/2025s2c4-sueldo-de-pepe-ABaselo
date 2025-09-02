@@ -7,20 +7,34 @@ object cadete {
 
 }
 object gerente {
-  method neto() = 150000 
+  method neto() = 15000 
 }
 
 //Empleados
 object pepe {
-  var faltas = 0 
-  var property  categoria = cadete// si le saco el property me genera un warrion porque?
-  var property  tipoDeBonoResultado = bonoPorPorcentaje
-  var property tipoBonoPresentismo = bonoPorPresentismoNormal
+
+  var property  faltas = 0 
+  var  categoria = cadete// si le saco el property me genera un warrion porque?
+  var  tipoDeBonoResultado = bonoPorMontoFijo
+  var  tipoBonoPresentismo = bonoPorPresentismoNormal
 
 //  var bonoNulo = bonoPorNulo 
 
+method categoria() = categoria 
+
+method categoria(_categoria){categoria = _categoria}
+
+method  tipoDeBonoResultado() = tipoDeBonoResultado
+
+method tipoDeBonoResultado (_tipoDeBonoResultado){tipoDeBonoResultado = _tipoDeBonoResultado}
+
+method tipoBonoPresentismo() = tipoBonoPresentismo 
+
+method tipoBonoPresentismo(_tipoBonoPresentismo) {tipoBonoPresentismo = _tipoBonoPresentismo}
+
+
 //  method sueldo() = neto() + bonoResultados.calcularPara(self) + bonoPresentismo.calcularPara(self)
-  method sueldo() = cadete.neto() + self.bonoResultado()
+   method sueldo() = categoria.neto() + tipoDeBonoResultado.bono(self) + tipoBonoPresentismo.calcularPara(self)
   
   //agregarFaltas
   method faltas(_faltas){
@@ -31,6 +45,8 @@ object pepe {
     return  categoria.neto()
  }
 
+
+
 /*
 method neto(){
 const neto = categoria.neto()
@@ -40,20 +56,23 @@ Nota:
 Como limpia la referencia y como trabaja en el momento, todo ocurre en el methodo. 
 se crea en el momento y se elimina cuando termina su ejecucion.
 
-*/
+
 
   method bonoResultado() = tipoDeBonoResultado.bono(self)
+  */
 }
+
+
 //obejetos bonos
 
 object bonoPorPorcentaje{
-  method bono(empleado) = empleado.neto() * 0.1  
+  method bono(empleado) = empleado.neto() * (10/100)
 }
 object bonoPorMontoFijo{
- method bonoFijo(empleado) = 800  
+ method bono(empleado) = 800  
 }
 object bonoPorNulo{
- method nulo(empleado) = 0 
+ method bono(empleado) = 0 
 }
 
 //objetos bonos presentismos
@@ -74,8 +93,8 @@ object  bonoPorPresentismoNormal{
 
 }//fin objeto bono por presentismo normal
 
-object bonoPorPresentismoAjuste{
-  method calcularAjustePresentismo(empleado) {
+object calcularPara{
+  method calcularPara(empleado) {
       if(empleado.faltas()== 0){return 100}
       else{return 0}  
     }
@@ -84,7 +103,7 @@ object bonoPorPresentismoAjuste{
 
 object bonoPorPresentismoDemagogico{
 
-  method calcularPresentismoDemagogico(empleado) {
+  method calcularPara(empleado) {
     
      if(empleado.neto() < 18000 ){ return 500}
 
@@ -96,8 +115,8 @@ object bonoPorPresentismoDemagogico{
 
 object bonoPresentismoNulo{
 
-method calcularPresentismoNulo() = 0
-  
+method calcularPara(empleado) = 0
+
 }
 
 
