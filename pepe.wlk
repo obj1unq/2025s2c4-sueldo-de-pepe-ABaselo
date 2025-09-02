@@ -24,7 +24,7 @@ method categoria() = categoria
 
 method categoria(_categoria){categoria = _categoria}
 
-method  tipoDeBonoResultado() = tipoDeBonoResultado
+method tipoDeBonoResultado() = tipoDeBonoResultado
 
 method tipoDeBonoResultado (_tipoDeBonoResultado){tipoDeBonoResultado = _tipoDeBonoResultado}
 

@@ -1,6 +1,6 @@
 import pepe.*
 
-describe "Sueldo Pepe cadete" {
+describe "Test 3: Sueldo Pepe cadete" {
 	
 	test "pepe cadete" {
 			pepe.faltas(3)
@@ -9,7 +9,7 @@ describe "Sueldo Pepe cadete" {
 	}
 }//fin describe sueldo pepe cadete
 
-describe "sueldo pepe Gerente"{
+describe "Test 2: sueldo pepe Gerente"{
 	test "pepe gerente"{
 		pepe.categoria(gerente)
 		assert.equals(pepe.categoria(), gerente)
@@ -18,4 +18,16 @@ describe "sueldo pepe Gerente"{
 		assert.equals(pepe.sueldo(), 16500)
 				
 	}
+}
+
+describe "Test 3: pepe Cadete con presentismo" {
+  test "pepe cadete con presentismo" {
+		pepe.categoria(cadete)
+		assert.equals(pepe.categoria(), cadete)
+		pepe.tipoDeBonoResultado(bonoPorPorcentaje)
+		pepe.faltas(0)
+	    pepe.tipoBonoPresentismo(bonoPorPresentismoNormal)		
+		assert.equals(pepe.sueldo(), 24000)
+	
+  }
 }
