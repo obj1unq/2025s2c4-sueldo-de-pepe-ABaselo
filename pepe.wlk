@@ -211,6 +211,15 @@ object vendedor{
     else return 16000
   }    
   
-  
-
 }//objeto vendedor
+object medioTiempo{
+    
+    var categoriaBase = cadete
+    
+    method categoriaBase(_categoria) {categoriaBase = _categoria}
+
+    method neto() = categoriaBase.neto() * 0.5
+}
+
+
+

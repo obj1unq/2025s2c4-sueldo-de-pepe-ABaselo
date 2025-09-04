@@ -1,6 +1,6 @@
 import pepe.*
 
-describe "Test 3: Sueldo Pepe cadete" {
+describe "Test 1: Sueldo Pepe cadete" {
 	
 	test "pepe cadete" {
 			pepe.faltas(3)
@@ -59,4 +59,13 @@ describe "test 6: categoria vendedor"{
 		assert.equals(pepe.sueldo(), 17600)
 	}
 
+}
+
+describe "test 7: categoria medio tiempo" {
+  test "pepe trabaja medio tiempo" {
+	medioTiempo.categoriaBase(gerente)
+	pepe.categoria(medioTiempo)
+	assert.equals(pepe.categoria(), medioTiempo)		
+	assert.equals(pepe.neto(),7500)
+  }
 }
