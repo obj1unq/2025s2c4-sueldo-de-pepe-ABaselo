@@ -32,14 +32,15 @@ method tipoBonoPresentismo() = tipoBonoPresentismo
 
 method tipoBonoPresentismo(_tipoBonoPresentismo) {tipoBonoPresentismo = _tipoBonoPresentismo}
 
+//agregarFaltas
+  method faltas(_faltas){
+  faltas +=_faltas
+  } 
 
 //  method sueldo() = neto() + bonoResultados.calcularPara(self) + bonoPresentismo.calcularPara(self)
    method sueldo() = categoria.neto() + tipoDeBonoResultado.bono(self) + tipoBonoPresentismo.calcularPara(self)
   
-  //agregarFaltas
-  method faltas(_faltas){
-  faltas +=_faltas
-  } 
+  
    
   method neto() {
     return  categoria.neto()
@@ -164,3 +165,31 @@ object bonoPorPorcentaje {
 
 
 
+// extencion del ejercicio
+
+//objeto sofia
+
+object sofia {
+
+  var categoria = cadete
+  var faltas = 0
+  
+  var tipoDeBonoResultado = bonoPorNulo
+
+//metodos setter/getter
+  method categoria(_categoria){categoria = _categoria}
+
+  method categoria() = categoria
+
+  method faltas(_faltas){faltas += _faltas}
+
+  method tipoDeBonoResultado() =  tipoDeBonoResultado
+
+  method tipoDeBonoResultado(_tipoDeBonoResultado){tipoDeBonoResultado = _tipoDeBonoResultado }
+
+  //method sueldo() 
+
+  method sueldo() = (categoria.neto() * 1.3) + tipoDeBonoResultado.bono(self)
+
+
+}
