@@ -45,6 +45,18 @@ describe "test 4: pepe cadete con falta y presentismo" {
 describe "test 5: sofia sueldo" {
   test "sofia cadete sueldo resultado bono Nulo con %30" {
 	sofia.categoria(cadete)
-	assert.equals(sofia.sueldo(), 26000)
+	assert.equals(sofia.sueldo(), 26000)	
   }
+}
+
+describe "test 6: categoria vendedor"{
+	test "pepe vendedor debe ganar 17600"{
+		pepe.categoria(vendedor)
+		vendedor.DesactiPorMuchasVentas()
+		assert.equals(pepe.categoria(), vendedor)		
+	    pepe.tipoBonoPresentismo(bonoPresentismoNulo)
+		pepe.tipoDeBonoResultado(bonoPorPorcentaje)
+		assert.equals(pepe.sueldo(), 17600)
+	}
+
 }

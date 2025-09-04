@@ -191,5 +191,26 @@ object sofia {
 
   method sueldo() = (categoria.neto() * 1.3) + tipoDeBonoResultado.bono(self)
 
+  method neto() = categoria.neto()
+    
 
-}
+}//fin objeto sofia
+
+//nueva categoria
+
+object vendedor{
+
+    var muchasVentas = false
+
+    method ActivarPorMuchasVentas(){muchasVentas = true} 
+    method DesactiPorMuchasVentas(){muchasVentas = false}
+
+
+    method neto(){
+    if(muchasVentas) return 16000*1.25
+    else return 16000
+  }    
+  
+  
+
+}//objeto vendedor
