@@ -31,3 +31,13 @@ describe "Test 3: pepe Cadete con presentismo" {
 	
   }
 }
+describe "test 4: pepe cadete con falta y presentismo" {
+  test "pep cadete con falta y presentismo" {
+	pepe.categoria(cadete)
+		assert.equals(pepe.categoria(), cadete)
+		pepe.tipoDeBonoResultado(bonoPorPorcentaje)
+		pepe.faltas(1)
+	    pepe.tipoBonoPresentismo(bonoPorPresentismoNormal)		
+		assert.equals(pepe.sueldo(), 23000)
+  }
+}
