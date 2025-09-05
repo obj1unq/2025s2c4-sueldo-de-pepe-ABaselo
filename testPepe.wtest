@@ -18,7 +18,7 @@ describe "Test 2: sueldo pepe Gerente"{
 		assert.equals(pepe.sueldo(), 16500)
 				
 	}
-}
+}//fin describe sueldo pepe gerente
 
 describe "Test 3: pepe Cadete con presentismo" {
   test "pepe cadete con presentismo" {

@@ -1,7 +1,7 @@
 //trabajo con polimosrfismo
 
 
-//categorias 
+//*************************************categorias *****************************************
 object cadete { 
   method neto() = 20000  
 
@@ -10,7 +10,48 @@ object gerente {
   method neto() = 15000 
 }
 
-//Empleados
+//nuevas categorias
+
+object vendedor{
+
+    var muchasVentas = false
+
+    method ActivarPorMuchasVentas(){muchasVentas = true} 
+    method DesactiPorMuchasVentas(){muchasVentas = false}
+
+
+    method neto(){
+    if(muchasVentas) return 16000*1.25
+    else return 16000
+  }    
+  
+}//fin objeto vendedor
+
+object medioTiempo{
+    
+    var categoriaBase = cadete
+    
+    method categoriaBase(_categoria) {categoriaBase = _categoria}
+
+    method neto() = categoriaBase.neto() * 0.5
+}//fin objeto mediotiempo
+
+//objeto categoriaRoque
+  object categoriaRoque{
+  method neto() = 28000
+}//fin objeto categoriaroque
+
+object categoriaCompanero{
+  var companero =  cadete
+  
+method companero() = companero
+method companero(_companero){companero = _companero}
+
+method neto() = companero.neto()
+ 
+}//fin objeto categoriaCompanero
+
+//***********************Empleados**********************************
 object pepe {
 
   var property  faltas = 0 
@@ -40,95 +81,22 @@ method tipoBonoPresentismo(_tipoBonoPresentismo) {tipoBonoPresentismo = _tipoBon
 //  method sueldo() = neto() + bonoResultados.calcularPara(self) + bonoPresentismo.calcularPara(self)
    method sueldo() = categoria.neto() + tipoDeBonoResultado.bono(self) + tipoBonoPresentismo.calcularPara(self)
   
-  
-   
-  method neto() {
+    method neto() {
     return  categoria.neto()
- }
-
-
-
-/*
-method neto(){
-const neto = categoria.neto()
-return neto
-}
-Nota:
-Como limpia la referencia y como trabaja en el momento, todo ocurre en el methodo. 
-se crea en el momento y se elimina cuando termina su ejecucion.
-
-
-
-  method bonoResultado() = tipoDeBonoResultado.bono(self)
-  */
-}
-
-
-//obejetos bonos
-
-object bonoPorPorcentaje{
-  method bono(empleado) = empleado.neto() * (10/100)
-}
-object bonoPorMontoFijo{
- method bono(empleado) = 800  
-}
-object bonoPorNulo{
- method bono(empleado) = 0 
-}
-
-//objetos bonos presentismos
-
-object  bonoPorPresentismoNormal{
-
-  method calcularPara(empleado) {
-    if (empleado.faltas() == 0) {
-      return 2000
+   }
+    /*
+    method neto(){
+    const neto = categoria.neto()
+    return neto
     }
-    else  if (empleado.faltas() == 1) {
-      return 1000
-    }
-    else {
-      return 0  
-    }
- } //fin method 
+    Nota:
+    Como limpia la referencia y como trabaja en el momento, todo ocurre en el methodo. 
+    se crea en el momento y se elimina cuando termina su ejecucion.
+      method bonoResultado() = tipoDeBonoResultado.bono(self)
+    */
+}// sin objeto pepe
 
-}//fin objeto bono por presentismo normal
-
-object bonoPorPresentismoAjuste {
-  method calcularPara(empleado) {
-    if (empleado.faltas() == 0) return 100
-    else return 0
-  }
-}
-
-object bonoPorPresentismoDemagogico{
-
-  method calcularPara(empleado) {
-    
-     if(empleado.neto() < 18000 ){ return 500}
-
-     else {return 300}
-    
-  }
-
-}//fin object
-
-object bonoPresentismoNulo{
-
-method calcularPara(empleado) = 0
-
-}
-
-object calcularPara{
-  method calcularPara(empleado) {
-      if(empleado.faltas()== 0){return 100}
-      else{return 0}  
-    }
-
-}// fin object 
-
-//objeto sofia
-
+//NUEVOS EMPLEADOS
 object sofia {
 
   var categoria = cadete
@@ -156,31 +124,6 @@ object sofia {
 
 }//fin objeto sofia
 
-//nueva categoria
-
-object vendedor{
-
-    var muchasVentas = false
-
-    method ActivarPorMuchasVentas(){muchasVentas = true} 
-    method DesactiPorMuchasVentas(){muchasVentas = false}
-
-
-    method neto(){
-    if(muchasVentas) return 16000*1.25
-    else return 16000
-  }    
-  
-}//objeto vendedor
-object medioTiempo{
-    
-    var categoriaBase = cadete
-    
-    method categoriaBase(_categoria) {categoriaBase = _categoria}
-
-    method neto() = categoriaBase.neto() * 0.5
-}
-
 //objecto roque
 object roque{
 
@@ -200,12 +143,8 @@ object roque{
 
   method neto() = categoriaRoque.neto()
 
-}
+}//Fin objeto roque
 
-//objeto categoriaRoque
-  object categoriaRoque{
-  method neto() = 28000
-}
 
 //objeto ernesto
 object ernesto{
@@ -227,20 +166,78 @@ object ernesto{
   method sueldo() = categoriaCompanero.neto() + bonoPresentismo.calcularPara(self)
 }//fin objeto ernesto
 
-object categoriaCompanero{
-  var companero =  cadete
-  
-method companero() = companero
-method companero(_companero){companero = _companero}
 
-method neto() = companero.neto()
- 
-}//fin objeto categoriaCompanero
+//********************** OBJETOS BONOS*******************************
+
+object bonoPorPorcentaje{
+  method bono(empleado) = empleado.neto() * (10/100)
+}
+object bonoPorMontoFijo{
+ method bono(empleado) = 800  
+}
+object bonoPorNulo{
+ method bono(empleado) = 0 
+}
+
+//************************ OBJETOS BONO PRESENTISMO *********************************
+
+object  bonoPorPresentismoNormal{
+
+  method calcularPara(empleado) {
+    if (empleado.faltas() == 0) {
+      return 2000
+    }
+    else  if (empleado.faltas() == 1) {
+      return 1000
+    }
+    else {
+      return 0  
+    }
+ } 
+
+}//fin objeto bono por presentismo normal
+
+object bonoPorPresentismoAjuste {
+  method calcularPara(empleado) {
+    if (empleado.faltas() == 0) return 100
+    else return 0
+  }
+}//fin objeto bono por presentismo Ajuste
+
+object bonoPorPresentismoDemagogico{
+
+  method calcularPara(empleado) {
+    
+     if(empleado.neto() < 18000 ){ return 500}
+
+     else {return 300}
+    
+  }
+
+}//fin object bono por demagogico
+
+object bonoPresentismoNulo{
+
+method calcularPara(empleado) = 0
+
+}
+
+object calcularPara{
+  method calcularPara(empleado) {
+      if(empleado.faltas()== 0){return 100}
+      else{return 0}  
+    }
+
+}// fin object presentismo nulo
 
 
 
 
-/* ********hecho en clases****  con nicolas jueves 28 agosto
+
+
+
+
+/* ********hecho en clases**** NOTAS con nicolas jueves 28 agosto
 object pepe {
  
  //referencia que apunta a un objeto
