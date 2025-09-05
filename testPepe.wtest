@@ -76,3 +76,27 @@ describe "test 8 sueldo roque" {
   }
 }
 
+describe "test 9: final de pruebas" {
+  test "prueba final de pepe" {
+	medioTiempo.categoriaBase(cadete)
+	pepe.categoria(medioTiempo)
+	assert.equals(pepe.categoria(), medioTiempo)
+	pepe.tipoDeBonoResultado(bonoPorPorcentaje)
+	pepe.tipoBonoPresentismo(bonoPorPresentismoDemagogico)
+	pepe.faltas(1)
+	assert.equals(pepe.sueldo(), 11500)
+  }
+
+  test "roque sueldo"{
+	
+	assert.equals(roque.sueldo(), 37800)
+  }
+  test"ernesto sueldo"{
+	medioTiempo.categoriaBase(cadete)
+	pepe.categoria(medioTiempo)
+	categoriaCompanero.companero(pepe)
+	ernesto.bonoPresentismo(bonoPorPresentismoAjuste)
+	assert.equals(ernesto.sueldo(), 10100)
+  }
+}
+

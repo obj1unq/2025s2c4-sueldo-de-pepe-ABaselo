@@ -94,13 +94,12 @@ object  bonoPorPresentismoNormal{
 
 }//fin objeto bono por presentismo normal
 
-object calcularPara{
+object bonoPorPresentismoAjuste {
   method calcularPara(empleado) {
-      if(empleado.faltas()== 0){return 100}
-      else{return 0}  
-    }
-
-}// fin object 
+    if (empleado.faltas() == 0) return 100
+    else return 0
+  }
+}
 
 object bonoPorPresentismoDemagogico{
 
@@ -120,52 +119,13 @@ method calcularPara(empleado) = 0
 
 }
 
+object calcularPara{
+  method calcularPara(empleado) {
+      if(empleado.faltas()== 0){return 100}
+      else{return 0}  
+    }
 
-
-
-
-/* ********hecho en clases**** 
-object pepe {
- 
- //referencia que apunta a un objeto
-
- //guarda la categoria y se acuerda. colaboradores interna y con pepita era externa.
- 
-  var property  categoria = cadete
-  var property tipobonoResultados =  bonoPorPorcentaje
-
-  //method sueldo() = categoria.neto() 
-
-  //revisar esto paara mañana sobre el self que es y para que sirve
-  
-	method sueldo() = self.neto() * self.bonoResultados() 
-
-    method neto() = categoria.neto()
-    //calculo un resultado para mi
-    method bonoResultados() = tipobonoResultados.bono(self)
-}
-
-
-object gerente {
-    method neto() = 15000
-
-
-}
-
-
-object cadete {
-  method name() = 20000 
-}
-
-object bonoPorPorcentaje {
-   method bono(empleado) = empleado.neto() * (10/100)  
-}
-
-*/
-
-
-
-// extencion del ejercicio
+}// fin object 
 
 //objeto sofia
 
@@ -247,3 +207,78 @@ object roque{
   method neto() = 28000
 }
 
+//objeto ernesto
+object ernesto{
+  var categoria = categoriaCompanero
+  var bonoPresentismo = bonoPresentismoNulo
+  const faltas = 0
+
+  method faltas() = faltas  
+  
+
+  method categoria() =  categoria
+  method categoria(_categoria){categoria = _categoria}
+  
+  method bonoPresentismo() = bonoPresentismo
+  method bonoPresentismo(_bonoPresentismo){bonoPresentismo = _bonoPresentismo}  
+
+  method neto() = categoriaCompanero.neto()
+    
+  method sueldo() = categoriaCompanero.neto() + bonoPresentismo.calcularPara(self)
+}//fin objeto ernesto
+
+object categoriaCompanero{
+  var companero =  cadete
+  
+method companero() = companero
+method companero(_companero){companero = _companero}
+
+method neto() = companero.neto()
+ 
+}//fin objeto categoriaCompanero
+
+
+
+
+/* ********hecho en clases****  con nicolas jueves 28 agosto
+object pepe {
+ 
+ //referencia que apunta a un objeto
+
+ //guarda la categoria y se acuerda. colaboradores interna y con pepita era externa.
+ 
+  var property  categoria = cadete
+  var property tipobonoResultados =  bonoPorPorcentaje
+
+  //method sueldo() = categoria.neto() 
+
+  //revisar esto paara mañana sobre el self que es y para que sirve
+  
+	method sueldo() = self.neto() * self.bonoResultados() 
+
+    method neto() = categoria.neto()
+    //calculo un resultado para mi
+    method bonoResultados() = tipobonoResultados.bono(self)
+}
+
+
+object gerente {
+    method neto() = 15000
+
+
+}
+
+
+object cadete {
+  method name() = 20000 
+}
+
+object bonoPorPorcentaje {
+   method bono(empleado) = empleado.neto() * (10/100)  
+}
+
+*/
+
+
+
+// extencion del ejercicio
