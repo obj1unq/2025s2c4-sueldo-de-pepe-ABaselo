@@ -1,10 +1,102 @@
 import pepe.*
 
-describe "Sueldo Pepe" {
+describe "Test 1: Sueldo Pepe cadete" {
 	
-	test "Test 1" {
-		//TODO: Implementame
+	test "pepe cadete" {
+			pepe.faltas(3)
+			assert.equals(pepe.sueldo(), 20800)
+
+	}
+}//fin describe sueldo pepe cadete
+
+describe "Test 2: sueldo pepe Gerente"{
+	test "pepe gerente"{
+		pepe.categoria(gerente)
+		assert.equals(pepe.categoria(), gerente)
+	    pepe.tipoBonoPresentismo(bonoPresentismoNulo)
+		pepe.tipoDeBonoResultado(bonoPorPorcentaje)
+		assert.equals(pepe.sueldo(), 16500)
+				
+	}
+}//fin describe sueldo pepe gerente
+
+describe "Test 3: pepe Cadete con presentismo" {
+  test "pepe cadete con presentismo" {
+		pepe.categoria(cadete)
+		assert.equals(pepe.categoria(), cadete)
+		pepe.tipoDeBonoResultado(bonoPorPorcentaje)
+		pepe.faltas(0)
+	    pepe.tipoBonoPresentismo(bonoPorPresentismoNormal)		
+		assert.equals(pepe.sueldo(), 24000)
+	
+  }
+}
+describe "test 4: pepe cadete con falta y presentismo" {
+  test "pepe cadete con falta y presentismo" {
+	pepe.categoria(cadete)
+		assert.equals(pepe.categoria(), cadete)
+		pepe.tipoDeBonoResultado(bonoPorPorcentaje)
+		pepe.faltas(1)
+	    pepe.tipoBonoPresentismo(bonoPorPresentismoNormal)		
+		assert.equals(pepe.sueldo(), 23000)
+  }
+}
+
+describe "test 5: sofia sueldo" {
+  test "sofia cadete sueldo resultado bono Nulo con %30" {
+	sofia.categoria(cadete)
+	assert.equals(sofia.sueldo(), 26000)	
+  }
+}
+
+describe "test 6: categoria vendedor"{
+	test "pepe vendedor debe ganar 17600"{
+		pepe.categoria(vendedor)
+		vendedor.DesactiPorMuchasVentas()
+		assert.equals(pepe.categoria(), vendedor)		
+	    pepe.tipoBonoPresentismo(bonoPresentismoNulo)
+		pepe.tipoDeBonoResultado(bonoPorPorcentaje)
+		assert.equals(pepe.sueldo(), 17600)
 	}
 
-	
 }
+
+describe "test 7: categoria medio tiempo" {
+  test "pepe trabaja medio tiempo" {
+	medioTiempo.categoriaBase(gerente)
+	pepe.categoria(medioTiempo)
+	assert.equals(pepe.categoria(), medioTiempo)		
+	assert.equals(pepe.neto(),7500)
+  }
+}
+
+describe "test 8 sueldo roque" {
+  test "sueldo roque" {	
+	assert.equals(roque.sueldo(), 37800)
+  }
+}
+
+describe "test 9: final de pruebas" {
+  test "prueba final de pepe" {
+	medioTiempo.categoriaBase(cadete)
+	pepe.categoria(medioTiempo)
+	assert.equals(pepe.categoria(), medioTiempo)
+	pepe.tipoDeBonoResultado(bonoPorPorcentaje)
+	pepe.tipoBonoPresentismo(bonoPorPresentismoDemagogico)
+	pepe.faltas(1)
+	assert.equals(pepe.sueldo(), 11500)
+  }
+
+  test "roque sueldo"{
+	
+	assert.equals(roque.sueldo(), 37800)
+  }
+  test"ernesto sueldo"{
+	medioTiempo.categoriaBase(cadete)
+	pepe.categoria(medioTiempo)
+	categoriaCompanero.companero(pepe)
+	ernesto.bonoPresentismo(bonoPorPresentismoAjuste)
+	assert.equals(ernesto.sueldo(), 10100)
+  }
+}
+
