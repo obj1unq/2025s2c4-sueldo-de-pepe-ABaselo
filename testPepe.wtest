@@ -69,3 +69,10 @@ describe "test 7: categoria medio tiempo" {
 	assert.equals(pepe.neto(),7500)
   }
 }
+
+describe "test 8 sueldo roque" {
+  test "sueldo roque" {	
+	assert.equals(roque.sueldo(), 37800)
+  }
+}
+

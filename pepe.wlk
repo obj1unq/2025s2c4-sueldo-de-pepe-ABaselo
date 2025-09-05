@@ -221,5 +221,29 @@ object medioTiempo{
     method neto() = categoriaBase.neto() * 0.5
 }
 
+//objecto roque
+object roque{
 
+  var categoria = categoriaRoque
+
+  var tipoDeBonoResultado = bonoPorMontoFijo
+
+  method categoria() = categoriaRoque
+
+  method categoria(_categoria){categoria = _categoria}
+
+  method tipoDeBonoResultado() = tipoDeBonoResultado
+
+  method tipoDeBonoResultado(_tipoDeBonoResultado){tipoDeBonoResultado = _tipoDeBonoResultado}  
+
+  method sueldo( )  = categoriaRoque.neto() + tipoDeBonoResultado.bono(self) + 9000 
+
+  method neto() = categoriaRoque.neto()
+
+}
+
+//objeto categoriaRoque
+  object categoriaRoque{
+  method neto() = 28000
+}
 
