@@ -29,7 +29,8 @@ object vendedor{
 
 object medioTiempo{
     
-    var categoriaBase = cadete
+    //inicializa en null el objeto que se llama null
+    var categoriaBase = null
     
     method categoriaBase(_categoria) {categoriaBase = _categoria}
 
