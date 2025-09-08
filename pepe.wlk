@@ -33,7 +33,7 @@ object medioTiempo{
     //var categoriaBase = null
     var categoriaBase = cadete
     
-    method categoriaBase(_categoria) {categoriaBase = _categoria}
+    method categoriaBase(_categoriaBase) {categoriaBase = _categoriaBase}
 
     method neto() = categoriaBase.neto() * 0.5
 }//fin objeto mediotiempo
